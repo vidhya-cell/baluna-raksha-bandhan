@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Dada 💙</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 15% 10%, rgba(60,100,255,.20), transparent 28%),
+        radial-gradient(circle at 85% 85%, rgba(180,130,255,.16), transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(255,200,70,.06), transparent 40%),
+        #020307;
+
+    font-family: Georgia, serif;
+    color: #111;
+}
+
+/* MAIN CARD */
+
+.card {
+    width: 100%;
+    max-width: 720px;
+    min-height: 600px;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 45px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5f5f7 55%,
+            #eeeaf8
+        );
+
+    border: 1px solid rgba(255,210,80,.55);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.85),
+        0 0 50px rgba(50,100,255,.12),
+        inset 0 0 40px rgba(120,90,180,.08);
+
+    text-align: center;
+}
+
+/* GOLD BORDER GLOW */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(218,170,55,.35);
+
+    border-radius: 22px;
+
+    pointer-events: none;
+}
+
+/* BACKGROUND GLOWS */
+
+.glow {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    filter: blur(50px);
+
+    pointer-events: none;
+}
+
+.glow.blue {
+    top: -150px;
+    left: -120px;
+
+    background: rgba(30,90,255,.16);
+}
+
+.glow.lavender {
+    right: -140px;
+    bottom: -130px;
+
+    background: rgba(170,100,255,.16);
+}
+
+/* PAGES */
+
+.page {
+    display: none;
+
+    position: relative;
+    z-index: 5;
+
+    animation: appear .65s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADINGS */
+
+h1 {
+    margin: 10px 0 12px;
+
+    color: #05070c;
+
+    font-size: 35px;
+
+    letter-spacing: .5px;
+}
+
+h2 {
+    color: #101522;
+
+    font-size: 27px;
+}
+
+.subtitle {
+    color: #625d72;
+
+    font-style: italic;
+
+    margin-bottom: 30px;
+}
+
+/* HEART */
+
+.big-heart {
+    font-size: 72px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(40,90,255,.5));
+
+    animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* MESSAGE */
+
+.message {
+    max-width: 600px;
+
+    margin: 25px auto;
+
+    color: #111;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+}
+
+.message strong {
+    color: #1747a8;
+}
+
+/* BUTTON */
+
+button {
+    border: 1px solid #d8b44c;
+
+    padding: 14px 27px;
+
+    margin-top: 15px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #05070c,
+            #111c35
+        );
+
+    color: #fff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 25px rgba(0,0,0,.35),
+        0 0 15px rgba(50,90,255,.12);
+
+    transition: .25s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    border-color: #f0cc65;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45),
+        0 0 20px rgba(50,100,255,.2);
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+/* INPUT */
+
+input {
+    width: 100%;
+    max-width: 370px;
+
+    padding: 14px;
+
+    margin-top: 15px;
+
+    border: 2px solid #cfc9df;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #fff;
+
+    color: #111;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+input:focus {
+    border-color: #3768d9;
+
+    box-shadow:
+        0 0 15px rgba(50,90,220,.15);
+}
+
+/* CLUE NUMBER */
+
+.clue {
+    display: inline-flex;
+
+    width: 48px;
+    height: 48px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a0d16,
+            #1d316c
+        );
+
+    border: 2px solid #e1bd55;
+
+    color: #fff;
+
+    font-weight: bold;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 0 20px rgba(40,80,220,.2);
+}
+
+/* ERROR */
+
+.error {
+    display: none;
+
+    margin-top: 15px;
+
+    color: #b02d46;
+
+    font-size: 15px;
+}
+
+/* RAKHI */
+
+.rakhi-area {
+    position: relative;
+
+    width: 250px;
+    height: 190px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.rakhi-thread {
+    position: absolute;
+
+    width: 250px;
+    height: 13px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1747a8,
+            #d8ae3e,
+            #9c78d4,
+            #1747a8
+        );
+
+    box-shadow:
+        0 0 12px rgba(30,70,180,.25);
+}
+
+.rakhi {
+    position: relative;
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    border: 6px solid #f1ca5b;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff1a8 0 11%,
+            #d9aa3d 12% 22%,
+            #2856b8 23% 39%,
+            #8c69c4 40% 55%,
+            #d6a83c 56% 70%,
+            #10172d 71% 100%
+        );
+
+    box-shadow:
+        0 0 0 6px #202d69,
+        0 0 0 11px #d8ae43,
+        0 0 35px rgba(55,90,220,.45);
+
+    transform: scale(0);
+
+    transition:
+        transform 1s cubic-bezier(.17,.67,.35,1.4);
+}
+
+.rakhi.visible {
+    transform: scale(1);
+}
+
+/* LETTER */
+
+.letter {
+    text-align: left;
+
+    color: #080808;
+
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    white-space: pre-wrap;
+}
+
+.signature {
+    margin-top: 30px;
+
+    text-align: right;
+
+    color: #111;
+
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        cursive;
+
+    font-size: 20px;
+
+    transition: opacity .8s;
+}
+
+.final-heart {
+    margin-top: 25px;
+
+    font-size: 55px;
+
+    animation: heartbeat 1.8s infinite;
+}
+
+/* SPARKLES */
+
+.sparkle {
+    position: fixed;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    font-size: 24px;
+
+    animation: sparkle 1.5s forwards;
+}
+
+@keyframes sparkle {
+    from {
+        opacity: 1;
+
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(var(--x),var(--y))
+            scale(.2);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 38px 22px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+
+    .letter {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .big-heart {
+        font-size: 62px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="glow blue"></div>
+<div class="glow lavender"></div>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+    <div class="big-heart">💙</div>
+
+    <h1>Hey Dada...</h1>
+
+    <div class="subtitle">
+        Baluna, idhu only for you.
+    </div>
+
+    <div class="message">
+
+        Idhu normal Raksha Bandhan wish illa. 😌
+
+        <br><br>
+
+        Konjam game...
+
+        Konjam namma memories...
+
+        Konjam sibling torture. 😂
+
+        <br><br>
+
+        Ready ah?
+
+    </div>
+
+    <button onclick="showPage(2)">
+        Start pannalama? 👀
+    </button>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+    <div class="clue">1</div>
+
+    <h2>First clue 🍴</h2>
+
+    <div class="message">
+
+        Namma rendu perum share pannina
+        oru food memory...
+
+        <br><br>
+
+        Adhu enna?
+
+        <br><br>
+
+        <strong>Hint:</strong>
+        Romba fancy illa. 😂
+
+    </div>
+
+    <input
+        id="answer1"
+        type="text"
+        placeholder="Type your answer..."
+        autocomplete="off"
+    >
+
+    <br>
+
+    <button onclick="checkClue(1)">
+        Unlock 🔐
+    </button>
+
+    <div class="error" id="error1">
+        Wrong answer 😂 Try again, Dada.
+    </div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="page" id="page3">
+
+    <div class="clue">2</div>
+
+    <h2>Next one 🛣️</h2>
+
+    <div class="message">
+
+        Namma rendu perum pona
+        oru place...
+
+        <br><br>
+
+        Starts with <strong>TNM...</strong>
+
+        <br><br>
+
+        Auroville um namma memories la irukku. 💙
+
+        <br><br>
+
+        First place enna?
+
+    </div>
+
+    <input
+        id="answer2"
+        type="text"
+        placeholder="Type your answer..."
+        autocomplete="off"
+    >
+
+    <br>
+
+    <button onclick="checkClue(2)">
+        Continue 💙
+    </button>
+
+    <div class="error" id="error2">
+        Dadaaa 😂 Memory refresh pannunga.
+    </div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="page" id="page4">
+
+    <div class="clue">3</div>
+
+    <h2>Last clue 😏</h2>
+
+    <div class="message">
+
+        Nee enna oru nickname la koopduva...
+
+        <br><br>
+
+        Sometimes romba irritate aagum. 😂
+
+        <br><br>
+
+        But honestly...
+
+        <br>
+
+        <strong>
+        adha nee koopta dhaan special.
+        </strong>
+
+        <br><br>
+
+        What is it?
+
+    </div>
+
+    <input
+        id="answer3"
+        type="text"
+        placeholder="Type your answer..."
+        autocomplete="off"
+    >
+
+    <br>
+
+    <button onclick="checkClue(3)">
+        Final Unlock 🔓
+    </button>
+
+    <div class="error" id="error3">
+        Wrong 😂 You know this one!
+    </div>
+
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section class="page" id="page5">
+
+    <div class="big-heart">✨</div>
+
+    <h1>You found it.</h1>
+
+    <div class="message">
+
+        Okay Dada...
+
+        <br><br>
+
+        <strong>
+        Mental test passed. 😂
+        </strong>
+
+        <br><br>
+
+        Now you get your Rakhi. 💙
+
+    </div>
+
+    <button onclick="revealRakhi()">
+        Tie My Rakhi 🪢
+    </button>
+
+</section>
+
+
+<!-- PAGE 6 -->
+
+<section class="page" id="page6">
+
+    <h1>For My Dada 💙</h1>
+
+    <div class="rakhi-area">
+
+        <div class="rakhi-thread"></div>
+
+        <div class="rakhi" id="rakhi"></div>
+
+    </div>
+
+    <div class="message">
+
+        Rakhi tied. 💙
+
+        <br><br>
+
+        Namma evlo sanda pottalum...
+
+        <br>
+
+        Nee evlo irritate pannalum...
+
+        <br>
+
+        Nee care illa madhiri
+        act pannalum...
+
+        <br><br>
+
+        <strong>
+        Nee en Dada dhaan.
+        </strong>
+
+    </div>
+
+    <button onclick="showPage(7)">
+        One Last Thing... 👀
+    </button>
+
+</section>
+
+
+<!-- PAGE 7 -->
+
+<section class="page" id="page7">
+
+    <h1>Padika matan apram... 😂</h1>
+
+    <div class="message">
+
+        I know...
+
+        <br><br>
+
+        <strong>
+        "Padika matan apram."
+        </strong>
+
+        😂
+
+        <br><br>
+
+        But this one...
+
+        <br>
+
+        please padichidu.
+
+        💙
+
+    </div>
+
+    <button onclick="startLetter()">
+        Open My Heart 💙
+    </button>
+
+</section>
+
+
+<!-- PAGE 8 -->
+
+<section class="page" id="page8">
+
+    <h1>To My Dada 💙</h1>
+
+    <div class="letter" id="letter"></div>
+
+    <div
+        class="signature"
+        id="signature"
+        style="opacity:0;"
+    >
+        — Your Paithiyam, Forever 💙
+    </div>
+
+    <div class="final-heart">
+        💙
+    </div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+function showPage(number) {
+
+    const pages =
+        document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    const target =
+        document.getElementById(
+            "page" + number
+        );
+
+    if (target) {
+
+        target.classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+}
+
+
+/* =========================
+   ANSWERS
+========================= */
+
+function cleanAnswer(text) {
+
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ");
+
+}
+
+
+function checkClue(number) {
+
+    const input =
+        document.getElementById(
+            "answer" + number
+        );
+
+    const answer =
+        cleanAnswer(input.value);
+
+    let correct = false;
+
+
+    if (number === 1) {
+
+        correct =
+            answer === "shawarma" ||
+            answer === "showerma";
+
+    }
+
+
+    if (number === 2) {
+
+        correct =
+            answer.includes("tnm") ||
+            answer.includes("highway");
+
+    }
+
+
+    if (number === 3) {
+
+        correct =
+            answer.includes("mental") ||
+            answer.includes("paithiyam");
+
+    }
+
+
+    if (correct) {
+
+        makeSparkles();
+
+        if (number === 1) {
+            showPage(3);
+        }
+
+        if (number === 2) {
+            showPage(4);
+        }
+
+        if (number === 3) {
+            showPage(5);
+        }
+
+    }
+
+    else {
+
+        const error =
+            document.getElementById(
+                "error" + number
+            );
+
+        error.style.display = "block";
+
+        setTimeout(function() {
+            error.style.display = "none";
+        }, 2200);
+
+    }
+
+}
+
+
+/* =========================
+   RAKHI
+========================= */
+
+function revealRakhi() {
+
+    showPage(6);
+
+    setTimeout(function() {
+
+        document
+            .getElementById("rakhi")
+            .classList.add("visible");
+
+        makeSparkles();
+
+    }, 400);
+
+}
+
+
+/* =========================
+   FINAL LETTER
+========================= */
+
+const letterText = `Dada...
+
+Namma perfect siblings illa.
+
+Sanda poduvom.
+Irritate pannuvom.
+Sometimes pesama iruppom. 😂
+
+But whatever happens,
+nee enakku romba important.
+
+Tough situation la
+nee en pakkam ninna moments
+naan marakka maaten.
+
+Nee care panradhu
+always show panna maata.
+
+But sometimes...
+
+konjam kaamichidu. 💙
+
+And one thing mattum
+never misunderstand.
+
+One day naan married aagalam.
+Husband iruppaar.
+Kids iruppanga.
+Life change aagalam.
+
+But athunaala
+nee enakku less important
+aayiduva nu nenachikaadha.
+
+Nee en Dada.
+
+Un place ah
+yaaralum replace panna mudiyadhu.
+
+Namma eppavume
+everything share pannura,
+sanda podura,
+sirikkura,
+one another ah irritate pannura
+siblings ah irukanum. 😂
+
+And yes...
+
+enna "Mental" nu koopdradhu
+never stop pannadha.
+
+Adhu unakku mattum reserved. 😂💙
+
+No matter how much life changes,
+I want this bond to stay.
+
+Unbreakable.
+
+Forever.
+
+Happy Raksha Bandhan, Dada. 💙`;
+
+
+let letterPosition = 0;
+
+
+function startLetter() {
+
+    showPage(8);
+
+    const letter =
+        document.getElementById("letter");
+
+    const signature =
+        document.getElementById("signature");
+
+    letter.textContent = "";
+
+    signature.style.opacity = "0";
+
+    letterPosition = 0;
+
+    typeLetter();
+
+}
+
+
+function typeLetter() {
+
+    const letter =
+        document.getElementById("letter");
+
+    if (
+        letterPosition <
+        letterText.length
+    ) {
+
+        const character =
+            letterText.charAt(
+                letterPosition
+            );
+
+        letter.textContent += character;
+
+        letterPosition++;
+
+        let speed = 22;
+
+        if (character === ".") {
+            speed = 240;
+        }
+
+        else if (character === ",") {
+            speed = 80;
+        }
+
+        else if (character === "\n") {
+            speed = 280;
+        }
+
+        setTimeout(
+            typeLetter,
+            speed
+        );
+
+    }
+
+    else {
+
+        setTimeout(function() {
+
+            document
+                .getElementById("signature")
+                .style.opacity = "1";
+
+            makeSparkles();
+
+        }, 500);
+
+    }
+
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+function makeSparkles() {
+
+    const symbols = [
+        "💙",
+        "✨",
+        "💫",
+        "💜",
+        "⭐",
+        "🤍"
+    ];
+
+    for (
+        let i = 0;
+        i < 20;
+        i++
+    ) {
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.className =
+            "sparkle";
+
+        sparkle.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+        sparkle.style.left =
+            (50 +
+            Math.random() * 20 -
+            10) + "%";
+
+        sparkle.style.top =
+            (50 +
+            Math.random() * 20 -
+            10) + "%";
+
+        sparkle.style.setProperty(
+            "--x",
+            (Math.random() * 320 - 160) + "px"
+        );
+
+        sparkle.style.setProperty(
+            "--y",
+            (Math.random() * 320 - 160) + "px"
+        );
+
+        document.body.appendChild(
+            sparkle
+        );
+
+        setTimeout(function() {
+            sparkle.remove();
+        }, 1600);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
