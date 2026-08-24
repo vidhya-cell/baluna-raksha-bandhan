@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Dada 💙</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 20% 10%, #dceeff, transparent 35%),
+        radial-gradient(circle at 80% 90%, #b8d7ec, transparent 35%),
+        linear-gradient(135deg, #071d32, #123d59, #071a2b);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Georgia, serif;
+    color: #173b52;
+}
+
+.container {
+    width: 100%;
+    max-width: 720px;
+}
+
+.card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.97),
+            rgba(235,246,252,.97)
+        );
+
+    border-radius: 25px;
+
+    padding: 45px 35px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45),
+        inset 0 0 35px rgba(75,130,160,.10);
+
+    overflow: hidden;
+
+    min-height: 560px;
+
+    text-align: center;
+}
+
+.glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+
+    background: rgba(72,166,219,.12);
+
+    border-radius: 50%;
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+.glow1 {
+    top: -100px;
+    left: -100px;
+}
+
+.glow2 {
+    bottom: -100px;
+    right: -100px;
+}
+
+h1 {
+    color: #14557b;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #14557b;
+}
+
+.subtitle {
+    color: #718794;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.page {
+    display: none;
+    animation: fadeIn .7s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bigHeart {
+    font-size: 70px;
+
+    animation:
+        heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+.message {
+    font-size: 19px;
+    line-height: 1.9;
+
+    color: #174d70;
+
+    margin: 25px auto;
+
+    max-width: 600px;
+}
+
+button {
+    border: none;
+
+    background:
+        linear-gradient(135deg, #17618b, #248bb9);
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+
+    box-shadow:
+        0 7px 18px rgba(25,100,140,.25);
+
+    transition: .25s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 25px rgba(25,100,140,.35);
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+input {
+    width: 100%;
+    max-width: 350px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    border: 2px solid #b8d2df;
+
+    outline: none;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+input:focus {
+    border-color: #2583ae;
+}
+
+.clueNumber {
+    display: inline-flex;
+
+    width: 45px;
+    height: 45px;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #d7edf7;
+
+    color: #14557b;
+
+    font-weight: bold;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+.hint {
+    color: #8295a0;
+
+    font-size: 14px;
+
+    margin-top: 18px;
+}
+
+.error {
+    color: #c34b5d;
+
+    margin-top: 15px;
+
+    display: none;
+}
+
+.success {
+    color: #18805b;
+
+    margin-top: 15px;
+
+    display: none;
+}
+
+/* Rakhi */
+
+.rakhiArea {
+    margin: 30px auto;
+
+    position: relative;
+
+    width: 220px;
+    height: 170px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rakhi {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffd76b 0 13%,
+            #e34c71 14% 28%,
+            #2c83b4 29% 43%,
+            #f0b84d 44% 58%,
+            #d84469 59% 100%
+        );
+
+    border: 6px solid #f7d26a;
+
+    box-shadow:
+        0 0 0 7px #e75d77,
+        0 0 0 13px #2e85af,
+        0 0 35px rgba(38,142,194,.55);
+
+    transform: scale(0);
+
+    transition: transform 1s cubic-bezier(.17,.67,.35,1.4);
+}
+
+.rakhi.show {
+    transform: scale(1);
+}
+
+.thread {
+    position: absolute;
+
+    width: 220px;
+    height: 14px;
+
+    background:
+        linear-gradient(
+            #d94e68 0 30%,
+            #e9b84d 30% 50%,
+            #287fac 50% 70%,
+            #d94e68 70%
+        );
+
+    border-radius: 10px;
+
+    opacity: .85;
+
+    z-index: -1;
+}
+
+.sparkle {
+    position: fixed;
+
+    pointer-events: none;
+
+    font-size: 24px;
+
+    animation: sparkleFly 1.5s forwards;
+}
+
+@keyframes sparkleFly {
+
+    from {
+        opacity: 1;
+        transform: translate(0,0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(.3);
+    }
+}
+
+/* Letter */
+
+#letter {
+    text-align: left;
+
+    color: #164f78;
+
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    white-space: pre-wrap;
+
+    text-shadow:
+        .2px .2px 0 #164f78;
+}
+
+.signature {
+    text-align: right;
+
+    margin-top: 30px;
+
+    color: #164f78;
+
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        cursive;
+
+    font-size: 20px;
+}
+
+.finalHeart {
+    font-size: 55px;
+
+    margin-top: 25px;
+
+    animation: heartbeat 1.8s infinite;
+}
+
+.small {
+    font-size: 14px;
+    color: #80929c;
+}
+
+@media(max-width:600px) {
+
+    .card {
+        padding: 35px 22px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+
+    #letter {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+<div class="bigHeart">💙</div>
+
+<h1>Hey Dada...</h1>
+
+<div class="subtitle">
+Baluna, this is something only for you.
+</div>
+
+<div class="message">
+
+Idhu normal Raksha Bandhan wish illa. 😌
+
+<br><br>
+
+Konjam treasure hunt...
+
+Konjam memories...
+
+Konjam unakku therinja
+Mental oda overthinking...
+
+and konjam love. 😂💙
+
+<br><br>
+
+But first...
+
+<strong>oru small game.</strong>
+
+</div>
+
+<button onclick="nextPage(2)">
+Start pannalama? 👀
+</button>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+<div class="clueNumber">1</div>
+
+<h2>First clue 🍴</h2>
+
+<div class="message">
+
+Namma rendu perum share pannina
+oru food memory...
+
+<br><br>
+
+Adha naan paatha udane
+namma rendu perum nyabagam varum.
+
+<br><br>
+
+<strong>
+What food am I talking about?
+</strong>
+
+</div>
+
+<input
+id="answer1"
+placeholder="Answer here..."
+autocomplete="off"
+>
+
+<br>
+
+<button onclick="checkAnswer(1)">
+Unlock 🔐
+</button>
+
+<div class="error" id="error1">
+Wrong answer 😂
+Dada, ivlo seekiram escape aaga mudiyadhu.
+</div>
+
+<div class="hint">
+Hint: It's not biryani. 😌
+</div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="page" id="page3">
+
+<div class="clueNumber">2</div>
+
+<h2>Okay... next one 🛣️</h2>
+
+<div class="message">
+
+Namma rendu perum pona
+oru place...
+
+<br><br>
+
+Actually, two places connected
+to some memories.
+
+<br><br>
+
+One starts with <strong>T</strong>...
+
+and another one is
+<strong>Auroville.</strong>
+
+<br><br>
+
+What is the first place?
+
+</div>
+
+<input
+id="answer2"
+placeholder="Answer here..."
+autocomplete="off"
+>
+
+<br>
+
+<button onclick="checkAnswer(2)">
+Next clue 💙
+</button>
+
+<div class="error" id="error2">
+Wrong 😂
+Dada, memory konjam refresh pannunga.
+</div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="page" id="page4">
+
+<div class="clueNumber">3</div>
+
+<h2>Last one... 😏</h2>
+
+<div class="message">
+
+There is one thing you call me...
+
+and honestly...
+
+sometimes romba irritate pannum. 😂
+
+<br><br>
+
+But somehow...
+
+if someone else calls me that,
+it won't feel the same.
+
+<br><br>
+
+<strong>
+What do you call me?
+</strong>
+
+</div>
+
+<input
+id="answer3"
+placeholder="Answer here..."
+autocomplete="off"
+>
+
+<br>
+
+<button onclick="checkAnswer(3)">
+Final Unlock 🔓
+</button>
+
+<div class="error" id="error3">
+Wrong answer, Mental. 😂
+Try again.
+</div>
+
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section class="page" id="page5">
+
+<div class="bigHeart">🎉</div>
+
+<h1>You found it!</h1>
+
+<div class="message">
+
+Okay Dada...
+
+You actually remember. 😂
+
+<br><br>
+
+So now...
+
+the treasure hunt is over.
+
+<br><br>
+
+But the actual surprise
+is just beginning.
+
+</div>
+
+<button onclick="showRakhi()">
+Tie My Rakhi 🪢💙
+</button>
+
+</section>
+
+
+<!-- PAGE 6 -->
+
+<section class="page" id="page6">
+
+<h1>For My Dada 💙</h1>
+
+<div class="rakhiArea">
+
+<div class="thread"></div>
+
+<div class="rakhi" id="rakhi">
+</div>
+
+</div>
+
+<div class="message">
+
+<strong>
+Rakhi tied. 💙
+</strong>
+
+<br><br>
+
+No matter how much we fight...
+
+No matter how much you irritate me...
+
+No matter how much you act like
+you don't care...
+
+<br><br>
+
+<strong>
+you are still my Dada.
+</strong>
+
+</div>
+
+<button onclick="showFinal()">
+One Last Thing...
+</button>
+
+</section>
+
+
+<!-- PAGE 7 -->
+
+<section class="page" id="page7">
+
+<h1>Padika matan apram... 😂</h1>
+
+<div class="message">
+
+Okay okay...
+
+I know.
+
+<strong>
+"Padika matan apram."
+</strong>
+
+😂
+
+<br><br>
+
+But this one...
+
+please padichidu.
+
+</div>
+
+<button onclick="startLetter()">
+Open My Heart 💙
+</button>
+
+</section>
+
+
+<!-- PAGE 8 -->
+
+<section class="page" id="page8">
+
+<h1>To My Dada 💙</h1>
+
+<div id="letter"></div>
+
+<div class="signature" id="signature">
+— Your Paithiyam, Forever 💙
+</div>
+
+<div class="finalHeart">
+💙
+</div>
+
+</section>
+
+</div>
+</div>
+
+
+<script>
+
+let currentPage = 1;
+
+function nextPage(page) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(p => p.classList.remove("active"));
+
+    document
+        .getElementById("page" + page)
+        .classList.add("active");
+
+    currentPage = page;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+/* -----------------------------
+   TREASURE HUNT
+----------------------------- */
+
+function normalize(value) {
+
+    return value
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ");
+}
+
+
+function checkAnswer(question) {
+
+    let input =
+        document.getElementById("answer" + question);
+
+    let answer =
+        normalize(input.value);
+
+    let correct = false;
+
+
+    if (question === 1) {
+
+        correct =
+            answer.includes("shawarma") ||
+            answer.includes("showerma");
+
+    }
+
+
+    if (question === 2) {
+
+        correct =
+            answer.includes("tnm") ||
+            answer.includes("highway");
+
+    }
+
+
+    if (question === 3) {
+
+        correct =
+            answer.includes("mental") ||
+            answer.includes("paithiyam");
+
+    }
+
+
+    if (correct) {
+
+        createSparkles();
+
+        setTimeout(() => {
+
+            nextPage(question + 1);
+
+        }, 400);
+
+    } else {
+
+        document
+            .getElementById("error" + question)
+            .style.display = "block";
+
+        setTimeout(() => {
+
+            document
+                .getElementById("error" + question)
+                .style.display = "none";
+
+        }, 2500);
+
+    }
+}
+
+
+/* -----------------------------
+   RAKHI
+----------------------------- */
+
+function showRakhi() {
+
+    nextPage(6);
+
+    setTimeout(() => {
+
+        document
+            .getElementById("rakhi")
+            .classList.add("show");
+
+        createSparkles();
+
+    }, 500);
+}
+
+
+/* -----------------------------
+   FINAL PAGE
+----------------------------- */
+
+function showFinal() {
+
+    nextPage(7);
+}
+
+
+/* -----------------------------
+   LETTER
+----------------------------- */
+
+const message = `Dada...
+
+Unakku oru vishayam sollanum.
+
+Namma rendu perum perfect siblings illa.
+
+Namma sanda poduvom.
+Nee enna irritate pannuva.
+Naanum summa vida maaten. 😂
+
+Sometimes nee enna paathu
+"Ne la periya aalu...
+unku ellarum help panvangha,
+engalala kandupingla" nu solli
+enna kandippa irritate pannuviya. 😭😂
+
+But honestly...
+
+evlo sanda irundhalum,
+evlo misunderstandings irundhalum,
+nee enakku romba important.
+
+Especially, enakku tough situation vandha time la,
+others yosikkave illaadha nerathula
+nee en pakkam ninna.
+
+Adha naan marakka maaten.
+
+Nee romba show panna maata.
+
+Care pannina kooda
+adha velila kaamika maata.
+
+Sometimes naan adha feel pannanum.
+
+Nee care panra nu
+naan guess panna vendam...
+
+konjam konjam show pannina podhum. 💙
+
+And one thing...
+
+Please don't ever think that
+one day naan married aana,
+en husband or babies important aana,
+nee enakku less important aayiduva nu.
+
+Life change aagalam.
+
+Responsibilities change aagalam.
+
+People and priorities change aagalam.
+
+But nee...
+
+nee en Dada.
+
+And that place
+yaaralum replace panna mudiyadhu.
+
+I want us to still talk about everything.
+
+Good things.
+Bad things.
+Random nonsense.
+Serious things.
+
+Sanda pottalum,
+konjam time kalichu
+again pesura siblings ah irukanum. 😂
+
+And please...
+
+enna "Mental" nu koopdradhu
+never stop pannadha.
+
+Adhu unakku mattum reserved. 😂💙
+
+Maybe naan romba solla maaten.
+
+Maybe sometimes naan fight panni
+wrong timing la pesuven.
+
+But deep down...
+
+you are one of my first comforts.
+
+And I want you to remain
+my brother forever.
+
+Not just by blood.
+
+But in that unbreakable way
+where no distance,
+no marriage,
+no responsibilities,
+no life changes
+can make us strangers.
+
+I love you, Dada.
+
+Happy Raksha Bandhan. 💙
+
+And yes...
+
+Padika matan apram nu sollitu
+idhu varaikum padichirundha...
+
+I know you. 😂`;
+
+let letterIndex = 0;
+
+function startLetter() {
+
+    nextPage(8);
+
+    letterIndex = 0;
+
+    document.getElementById("letter").textContent = "";
+
+    document.getElementById("signature").style.opacity = "0";
+
+    writeLetter();
+}
+
+
+function writeLetter() {
+
+    const letter =
+        document.getElementById("letter");
+
+    if (letterIndex < message.length) {
+
+        let char =
+            message.charAt(letterIndex);
+
+        letter.textContent += char;
+
+        letterIndex++;
+
+        let speed = 24;
+
+        if (char === ".")
+            speed = 260;
+
+        if (char === ",")
+            speed = 90;
+
+        if (char === "\n")
+            speed = 380;
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+
+        setTimeout(writeLetter, speed);
+
+    } else {
+
+        setTimeout(() => {
+
+            document
+                .getElementById("signature")
+                .style.opacity = "1";
+
+        }, 600);
+
+        createSparkles();
+    }
+}
+
+
+/* -----------------------------
+   SPARKLES
+----------------------------- */
+
+function createSparkles() {
+
+    const symbols =
+        ["💙","✨","💫","🩵","⭐"];
+
+    for (let i = 0; i < 18; i++) {
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.className = "sparkle";
+
+        sparkle.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+        sparkle.style.left =
+            (50 + (Math.random() * 30 - 15)) + "%";
+
+        sparkle.style.top =
+            (45 + (Math.random() * 15 - 7)) + "%";
+
+        sparkle.style.setProperty(
+            "--x",
+            (Math.random() * 300 - 150) + "px"
+        );
+
+        sparkle.style.setProperty(
+            "--y",
+            (Math.random() * 300 - 150) + "px"
+        );
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+
+            sparkle.remove();
+
+        }, 1600);
+    }
+}
+
+</script>
+
+</body>
+  </html>
