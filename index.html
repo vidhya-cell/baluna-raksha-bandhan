@@ -796,11 +796,13 @@ function normalize(value) {
 
 function checkAnswer(question) {
 
-    let input =
+    const input =
         document.getElementById("answer" + question);
 
-    let answer =
-        normalize(input.value);
+    const answer =
+        input.value
+    . trim ()
+    .toLowercase();
 
     let correct = false;
 
@@ -819,6 +821,7 @@ function checkAnswer(question) {
         correct =
             answer.includes("tnm") ||
             answer.includes("highway");
+        answer.includes("nh");
 
     }
 
@@ -835,14 +838,14 @@ function checkAnswer(question) {
     if (correct) {
 
         createSparkles();
+        nextpage(question+1);
 
         setTimeout(() => {
 
             nextPage(question + 1);
 
-        }, 400);
-
     } else {
+        const error=
 
         document
             .getElementById("error" + question)
